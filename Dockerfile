@@ -1,40 +1,46 @@
 FROM python:latest
 
 LABEL description Robot Framework in Docker with Additional Libaries.
+LABEL Marcin Koperski
+
 
 ENV ROBOT_HOME /opt/robot
 RUN mkdir $ROBOT_HOME
 
-#ENV TZ=Europe/Warsaw
-#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-#RUN ln -s /bin/bash /usr/bin/bash
+ENV TZ=Europe/Warsaw
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -s /bin/bash /usr/bin/bash
 #==============================
 # imagemagick
 #==============================
-#RUN apt-get update &&  apt-get install -yqq \
-#    imagemagick \
-#    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&  apt-get install -yqq \
+    imagemagick \
+    && rm -rf /var/lib/apt/lists/*
 
 #==============================
 # python
 #==============================
+RUN apt-get update &&  apt-get install -yqq \
+    zip \
+    unzip \
+    git-core \
+    libgtk-3-dev libjpeg-dev libtiff-dev \
+    libsdl2-dev libgstreamer-plugins-base1.0-dev libnotify-dev \
+    libsm-dev libwebkit2gtk-4.0-dev libxtst-dev \
+    libgl1-mesa-dev libglu1-mesa-dev \
+    build-essential \
+    unixodbc unixodbc-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN python --version
 RUN python -m pip install --upgrade pip setuptools wheel 
 RUN pip --version
 #========================
 # python dependencies
 #========================
-RUN pip install -U -r requests
-RUN pip install -U -r robotframework
-RUN pip install -U -r robotframework-selenium2library
-RUN pip install -U -r robotframework-jsonlibrary
-RUN pip install -U -r selenium
-RUN pip install -U -r lxml
-RUN pip install -U -r rstr
-RUN pip install -U -r pyyaml
-RUN pip install -U -r html2text
-RUN pip install -U -r jsonpath
-RUN pip install -U -r python-dateutil
-RUN pip install -U -r jsonpath-ng
+COPY install.txt /tmp/
+COPY packages.txt /tmp/
+RUN pip install -U -r /tmp/install.txt
+RUN pip install -U -r /tmp/packages.txt
 
 RUN robot --version || true
