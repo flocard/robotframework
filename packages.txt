@@ -9,7 +9,9 @@ datetime
 decorator
 docutils
 Faker
+html2text
 JayDeBeApi
+jsonpath
 jsonpath-ng>=1.4.3
 lxml
 numpy
@@ -28,6 +30,7 @@ python-dateutil
 pywin32-ctypes ; sys_platform == 'win32'
 Pywin32; sys_platform == 'win32'
 pyyaml
+requests
 requests3
 robotframework
 robotframework-appiumlibrary
@@ -46,9 +49,11 @@ robotframework-requests
 robotframework-ride
 robotframework-screencaplibrary
 robotframework-seleniumlibrary
+robotframework-selenium2library
 robotframework-sshlibrary
 robotframeworklexer
 robotremoteserver
+rstr
 selenium
 setuptools
 SQLAlchemy
