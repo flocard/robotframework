@@ -54,6 +54,7 @@ robotframework-selenium2library
 robotframework-sshlibrary
 robotframeworklexer
 robotremoteserver
+robotframework-jsonschemalibrary
 rstr
 selenium
 setuptools
