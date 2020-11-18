@@ -13,6 +13,7 @@ html2text
 JayDeBeApi
 jsonpath
 jsonpath-ng>=1.4.3
+jsonschema
 lxml
 numpy
 oauth2client 
