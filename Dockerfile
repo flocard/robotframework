@@ -35,6 +35,12 @@ RUN apt-get update &&  apt-get install -yqq \
 RUN python --version
 RUN python -m pip install --upgrade pip setuptools wheel 
 RUN pip --version
+
+#========================
+# Custom SSL configuration
+#========================
+COPY openssl.cnf /etc/ssl/
+
 #========================
 # python dependencies
 #========================
