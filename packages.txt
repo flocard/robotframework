@@ -62,7 +62,6 @@ SQLAlchemy
 sqlalchemy_pyodbc_mssql
 unicodecsv
 virtualenv
-wxPython
 xlrd
 xlutils 
 xlwt
