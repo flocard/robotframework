@@ -27,7 +27,6 @@ RUN apt-get update &&  apt-get install -yqq \
     libgtk-3-dev libjpeg-dev libtiff-dev \
     libsdl2-dev libgstreamer-plugins-base1.0-dev libnotify-dev \
     libsm-dev libwebkit2gtk-4.0-dev libxtst-dev \
-    libwebkitgtk-3.0-dev libwebkitgtk-dev \
     libgl1-mesa-dev libglu1-mesa-dev \
     build-essential \
     unixodbc unixodbc-dev \
