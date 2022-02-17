@@ -38,12 +38,14 @@ robotframework-appiumlibrary
 robotframework-archivelibrary
 #robotframework-autoitlibrary
 robotframework-databaselibrary
+robotframework-datadriver
 robotframework-excellib
 robotframework-faker
 robotframework-ftplibrary
 robotframework-httplibrary
 robotframework-imaplibrary
 robotframework-jsonlibrary
+robotframework-jsonvalidator
 robotframework-MarcinKoperski
 robotframework-pabot
 robotframework-requests
